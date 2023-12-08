@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <vector>
 #include <fstream>
+#include <algorithm> 
 using namespace std;
 
 struct MenuItemType{
@@ -27,7 +28,7 @@ void getData() {
 void showMenu() {
     cout << "Restorano pusryciu meniu:\n";
     for (int i = 0; i < 8; ++i) {
-        cout << i + 1 << ". " << setw(40) << left << menuList[i].menuItem << setw(10) << right << fixed << setprecision(2) << menuList[i].menuPrice << "€\n";
+        cout << i + 1 << ". " << setw(40) << left << menuList[i].menuItem << setw(10) << right << fixed << setprecision(2) << menuList[i].menuPrice << "Eur\n";
     }
     cout << "Uzsakyma pateiktite nurodydami uzsakymo numeri (norint baigti iveskite 0):\n";
 }
@@ -39,13 +40,35 @@ void printCheck() {
     float galutine_suma = 0;
     if (saskaita.is_open()) {
         saskaita << "Sveiki atvyke i restorana 'Grazma'!" << endl;
-        for (int i = 0; i < numbers.size(); ++i) {
-            saskaita << setw(40) << left << menuList[numbers[i]-1].menuItem << setw(10) << right << fixed << setprecision(2) << menuList[numbers[i]-1].menuPrice << "€\n";
+        sort(numbers.begin(), numbers.end());
 
+        int quantity = 1;
+        for (int i = 1; i < numbers.size(); ++i) {
+            if (numbers[i] == numbers[i - 1]) {
+                ++quantity;
+            }
+            else {
+                saskaita << quantity << " " << setw(40) << left << menuList[numbers[i - 1] - 1].menuItem << setw(10) << right << fixed << setprecision(2) << menuList[numbers[i - 1] - 1].menuPrice * quantity << "€\n";
+                quantity = 1;
+            }
         }
-    }
-    
 
+        saskaita << quantity << " " << setw(40) << left << menuList[numbers.back() - 1].menuItem << setw(10) << right << fixed << setprecision(2) << menuList[numbers.back() - 1].menuPrice * quantity << "€\n";
+    }
+
+    for (int i = 0; i < numbers.size(); i++) {
+        mokesciai += menuList[numbers[i]-1].menuPrice * 0.21;
+        galutine_suma += menuList[numbers[i] - 1].menuPrice;
+    }
+
+
+    galutine_suma += mokesciai;
+    saskaita << left << setw(40) << fixed << setprecision(2) << "\nMokesciai:" << right << setw(10) << mokesciai << "€\n";
+    saskaita << left << setw(40) << fixed << setprecision(2) << "Bendra suma:" << right << setw(10) << galutine_suma << "€\n";
+
+
+
+    
     cout << "Jusu saskaita sekmingai atspausdinta!\n";
 }
 

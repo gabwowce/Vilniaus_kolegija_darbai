@@ -1,5 +1,7 @@
 Sveiki atvyke i restorana 'Grazma'!
-1. Kiausiniene                                   1.45€
-2. Prancuziskas skrebutis                        1.99€
-3. Pusryciu dribsniai                            0.69€
-4. Arbata                                        0.75€
+
+Mokesciai:                                   1.03€
+Bendra suma:                                  5.92€
+1 Kiausiniene                                   1.45€
+1 Kiaulienos sonine su keptu kiausiniu          2.45€
+1 Keksiukas su vysnia                           0.99€

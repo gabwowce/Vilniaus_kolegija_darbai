@@ -1,1 +1,9 @@
-﻿  Cafe_Simulator.vcxproj -> C:\VIKO\Cafe_Simulator\x64\Debug\Cafe_Simulator.exe
+﻿  main.cpp
+C:\VIKO\Cafe_Simulator\Cafe_Simulator\main.cpp(18,36): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\VIKO\Cafe_Simulator\Cafe_Simulator\main.cpp(19,61): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\VIKO\Cafe_Simulator\Cafe_Simulator\main.cpp(20,44): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\VIKO\Cafe_Simulator\Cafe_Simulator\main.cpp(21,47): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\VIKO\Cafe_Simulator\Cafe_Simulator\main.cpp(22,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\VIKO\Cafe_Simulator\Cafe_Simulator\main.cpp(23,43): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\VIKO\Cafe_Simulator\Cafe_Simulator\main.cpp(46,59): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Cafe_Simulator.vcxproj -> C:\VIKO\Cafe_Simulator\x64\Debug\Cafe_Simulator.exe
