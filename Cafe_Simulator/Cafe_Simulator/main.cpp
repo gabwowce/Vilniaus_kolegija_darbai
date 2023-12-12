@@ -63,7 +63,7 @@ void printCheck() {
 
 
     galutine_suma += mokesciai;
-    saskaita << left << setw(52) << fixed << setprecision(2) << "\nMokesciai:" << right << setw(10) << mokesciai << "€\n";
+    saskaita << left << setw(53) << fixed << setprecision(2) << "\nMokesciai:" << right << setw(10) << mokesciai << "€\n";
     saskaita << left << setw(52) << fixed << setprecision(2) << "Bendra suma:" << right << setw(10) << galutine_suma << "€\n";
 
 
@@ -83,10 +83,13 @@ int main() {
     while (number != 0) {
         cout << "Iveskite pasirinkima: ";
         cin >> number;
-        if (number > 0) {
+        if (number == 0) {
+            break;
+        }
+        else if (number > 0 && number < 9) {
             numbers.push_back(number);
         }
-        if (number > 8) {
+        else {
             cout << "Netinkamas pasirinkimas, bandykite dar karta.\n";
         }
         
@@ -94,7 +97,7 @@ int main() {
     
     cout << "pasirinkimai: ";
     for (int i = 0; i < numbers.size(); ++i) {
-        cout << numbers[i] << " ";
+        cout << numbers[i] << ", ";
     }
 
 
