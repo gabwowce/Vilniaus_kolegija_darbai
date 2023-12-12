@@ -48,23 +48,24 @@ void printCheck() {
                 ++quantity;
             }
             else {
-                saskaita << quantity << " " << setw(40) << left << menuList[numbers[i - 1] - 1].menuItem << setw(10) << right << fixed << setprecision(2) << menuList[numbers[i - 1] - 1].menuPrice * quantity << "€\n";
+                saskaita << quantity << " " << setw(50) << left << menuList[numbers[i - 1] - 1].menuItem << setw(10) << right << fixed << setprecision(2) << menuList[numbers[i - 1] - 1].menuPrice * quantity << "€\n";
                 quantity = 1;
             }
         }
 
-        saskaita << quantity << " " << setw(40) << left << menuList[numbers.back() - 1].menuItem << setw(10) << right << fixed << setprecision(2) << menuList[numbers.back() - 1].menuPrice * quantity << "€\n";
+        saskaita << quantity << " " << setw(50) << left << menuList[numbers.back() - 1].menuItem << setw(10) << right << fixed << setprecision(2) << menuList[numbers.back() - 1].menuPrice * quantity << "€\n";
     }
 
     for (int i = 0; i < numbers.size(); i++) {
-        mokesciai += menuList[numbers[i]-1].menuPrice * 0.21;
+        mokesciai += menuList[numbers[i]-1].menuPrice * 0.09;
         galutine_suma += menuList[numbers[i] - 1].menuPrice;
     }
 
 
     galutine_suma += mokesciai;
-    saskaita << left << setw(40) << fixed << setprecision(2) << "\nMokesciai:" << right << setw(10) << mokesciai << "€\n";
-    saskaita << left << setw(40) << fixed << setprecision(2) << "Bendra suma:" << right << setw(10) << galutine_suma << "€\n";
+    saskaita << left << setw(52) << fixed << setprecision(2) << "\nMokesciai:" << right << setw(10) << mokesciai << "€\n";
+    saskaita << left << setw(52) << fixed << setprecision(2) << "Bendra suma:" << right << setw(10) << galutine_suma << "€\n";
+
 
 
 
