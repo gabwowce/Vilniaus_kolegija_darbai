@@ -39,7 +39,7 @@ void printCheck() {
     float mokesciai = 0;
     float galutine_suma = 0;
     if (saskaita.is_open()) {
-        saskaita << "Sveiki atvyke i restorana 'Grazma'!" << endl;
+        saskaita << "Sveiki atvyke i restorana 'Restoranas'!" << endl;
         sort(numbers.begin(), numbers.end());
 
         int quantity = 1;
@@ -94,11 +94,7 @@ int main() {
         }
         
     }
-    
-    cout << "pasirinkimai: ";
-    for (int i = 0; i < numbers.size(); ++i) {
-        cout << numbers[i] << ", ";
-    }
+   
 
 
     printCheck();
